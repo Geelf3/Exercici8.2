@@ -47,22 +47,23 @@ public class CotxeTui {
 		System.out.println("\nAmb el for standard");
 		System.out.println("Llistat de cotxes amb les seves dades: ");
 		for (int i = 0; i < llistaCotxes.size(); i++) {
-			System.out.println(" MARCA: " + llistaCotxes.get(i).getMarca() + 
-					"\n MODEL: " + llistaCotxes.get(i).getModel() + 
-					"\n CILINDRADA: " + llistaCotxes.get(i).getCilindrada() + 
-					"\n CILINDRES: " + llistaCotxes.get(i).getCilindres() + 
-					"\n POT. FISCAL: " + llistaCotxes.get(i).calculaPotFis() + 
+			Cotxe cotxe =  llistaCotxes.get(i);
+			System.out.println(" MARCA: " + cotxe.getMarca() + 
+					"\n MODEL: " + cotxe.getModel() + 
+					"\n CILINDRADA: " + cotxe.getCilindrada() + 
+					"\n CILINDRES: " + cotxe.getCilindres() + 
+					"\n POT. FISCAL: " + cotxe.calculaPotFis() + 
 					"\n -------------");
 		}
 		
 		// b) Print it using for each
 		System.out.println("\nAmb el for each:\n ");
-		for (Cotxe cotxes : llistaCotxes) {
-			System.out.println(" MARCA: " + llistaCotxes.get(llistaCotxes.indexOf(cotxes)).getMarca() + 
-					"\n MODEL: " + llistaCotxes.get(llistaCotxes.indexOf(cotxes)).getModel() + 
-					"\n CILINDRADA: " + llistaCotxes.get(llistaCotxes.indexOf(cotxes)).getCilindrada() + 
-					"\n CILINDRES: " + llistaCotxes.get(llistaCotxes.indexOf(cotxes)).getCilindres() + 
-					"\n POT. FISCAL: " + llistaCotxes.get(llistaCotxes.indexOf(cotxes)).calculaPotFis() + 
+		for (Cotxe cotxe : llistaCotxes) {
+			System.out.println(" MARCA: " + llistaCotxes.get(llistaCotxes.indexOf(cotxe)).getMarca() + 
+					"\n MODEL: " + llistaCotxes.get(llistaCotxes.indexOf(cotxe)).getModel() + 
+					"\n CILINDRADA: " + llistaCotxes.get(llistaCotxes.indexOf(cotxe)).getCilindrada() + 
+					"\n CILINDRES: " + llistaCotxes.get(llistaCotxes.indexOf(cotxe)).getCilindres() + 
+					"\n POT. FISCAL: " + llistaCotxes.get(llistaCotxes.indexOf(cotxe)).calculaPotFis() + 
 					"\n -------------");
 		}
 		
@@ -70,12 +71,14 @@ public class CotxeTui {
 		System.out.println("\nAmb l'iterator:\n ");
 		Iterator<Cotxe> llista = llistaCotxes.iterator();
         while (llista.hasNext()) {
-        	System.out.println(" MARCA: " + llistaCotxes.get(llistaCotxes.indexOf(llista.next())).getMarca() + 
-        			"\n MODEL: " + llistaCotxes.get(llistaCotxes.indexOf(llista.next())).getModel() + 
-					"\n CILINDRADA: " + llistaCotxes.get(llistaCotxes.indexOf(llista.next())).getCilindrada() + 
-					"\n CILINDRES: " + llistaCotxes.get(llistaCotxes.indexOf(llista.next())).getCilindres() + 
-					"\n POT. FISCAL: " + llistaCotxes.get(llistaCotxes.indexOf(llista.next())).calculaPotFis() + 
+        	Cotxe cotxe = llista.next();
+        	System.out.println(" MARCA: " + cotxe.getMarca() + 
+        			"\n MODEL: " + cotxe.getModel() + 
+					"\n CILINDRADA: " + cotxe.getCilindrada() + 
+					"\n CILINDRES: " + cotxe.getCilindres() + 
+					"\n POT. FISCAL: " + cotxe.calculaPotFis() + 
 					"\n -------------");
+        	
         }
 	}
 
