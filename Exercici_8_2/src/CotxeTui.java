@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CotxeTui {
 
@@ -40,7 +41,10 @@ public class CotxeTui {
 				System.out.println("El Ford Focus esta a la posició: " + i);
 			} 
 		}
+		
 		// 9: Print all the information from all the objects, including pot.fiscal.
+		// a) Using the standard loop
+		System.out.println("\nAmb el for standard");
 		System.out.println("Llistat de cotxes amb les seves dades: ");
 		for (int i = 0; i < llistaCotxes.size(); i++) {
 			System.out.println(" MARCA: " + llistaCotxes.get(i).getMarca() + 
@@ -50,6 +54,29 @@ public class CotxeTui {
 					"\n POT. FISCAL: " + llistaCotxes.get(i).calculaPotFis() + 
 					"\n -------------");
 		}
+		
+		// b) Print it using for each
+		System.out.println("\nAmb el for each:\n ");
+		for (Cotxe cotxes : llistaCotxes) {
+			System.out.println(" MARCA: " + llistaCotxes.get(llistaCotxes.indexOf(cotxes)).getMarca() + 
+					"\n MODEL: " + llistaCotxes.get(llistaCotxes.indexOf(cotxes)).getModel() + 
+					"\n CILINDRADA: " + llistaCotxes.get(llistaCotxes.indexOf(cotxes)).getCilindrada() + 
+					"\n CILINDRES: " + llistaCotxes.get(llistaCotxes.indexOf(cotxes)).getCilindres() + 
+					"\n POT. FISCAL: " + llistaCotxes.get(llistaCotxes.indexOf(cotxes)).calculaPotFis() + 
+					"\n -------------");
+		}
+		
+		// c) Print it using iterator
+		System.out.println("\nAmb l'iterator:\n ");
+		Iterator<Cotxe> llista = llistaCotxes.iterator();
+        while (llista.hasNext()) {
+        	System.out.println(" MARCA: " + llistaCotxes.get(llistaCotxes.indexOf(llista.next())).getMarca() + 
+        			"\n MODEL: " + llistaCotxes.get(llistaCotxes.indexOf(llista.next())).getModel() + 
+					"\n CILINDRADA: " + llistaCotxes.get(llistaCotxes.indexOf(llista.next())).getCilindrada() + 
+					"\n CILINDRES: " + llistaCotxes.get(llistaCotxes.indexOf(llista.next())).getCilindres() + 
+					"\n POT. FISCAL: " + llistaCotxes.get(llistaCotxes.indexOf(llista.next())).calculaPotFis() + 
+					"\n -------------");
+        }
 	}
 
 }
