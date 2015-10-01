@@ -1,0 +1,4 @@
+Uncaught java.util.NoSuchElementException exception in thread "main" in a method java.util.ArrayList$Itr.next() with signature ()Ljava/lang/Object;
+Exception in thread "main" java.util.NoSuchElementException
+	at java.util.ArrayList$Itr.next(ArrayList.java:834) [jar:file:/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.3.0.fc20.x86_64/jre/lib/rt.jar!/java/util/ArrayList$Itr.class]
+	at CotxeTui.main(CotxeTui.java:77) [file:/home/users/inf/wiaw2/iaw47965399/git/Exercici8.2/Exercici_8_2/bin/CotxeTui.class]
